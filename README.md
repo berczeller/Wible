@@ -10,13 +10,12 @@ Wible places wires and cables as curves: click points on surfaces or in the air 
 
 ## Features
 
-- Point placement tool: click on surfaces or in the air, with a reticle showing where the next point lands.
 - Catenary gravity with Tension, Weight and Length that stay in sync, per span between points.
-- Live rope physics with Stiffness and Damping, independent of the timeline.
+- Live physics with Stiffness and Damping, independent of the timeline.
 - Drapes over and collides with nearby objects, or only the objects in a chosen collection.
 - Every point gets a handle you drag with Blender's usual tools; moving, rotating or scaling the whole curve keeps its rope length.
 - Right-click a curve while drawing to add a point to it.
-- Depth, Resolution, Radial Resolution and Fill Caps, like Blender's own curves.
+- Depth, Resolution, Radial Resolution and Fill Caps.
 - Save as Curve (light, polygons made at render time) or Save as Mesh.
 - Mesh output with UV islands for the side and both caps, smooth or flat shading, and hard or beveled cap edges.
 - Trim sheet slots: pick faces on a trim plane and each curve's UVs fit a slot at your texel density, which also sets its thickness.
