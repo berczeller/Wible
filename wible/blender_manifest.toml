@@ -1,0 +1,22 @@
+schema_version = "1.0.0"
+
+id = "wible"
+version = "0.1.0"
+name = "Wible"
+tagline = "Place hanging curves in the viewport, with live gravity"
+maintainer = "Tom Berczeller"
+type = "add-on"
+
+tags = ["Add Curve", "Modeling"]
+
+blender_version_min = "5.2.0"
+
+license = ["SPDX:GPL-3.0-or-later"]
+copyright = ["2026 Tom Berczeller"]
+
+[build]
+paths_exclude_pattern = [
+  "__pycache__/",
+  "/.git/",
+  "/*.zip",
+]
