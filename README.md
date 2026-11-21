@@ -6,7 +6,7 @@
 
 ---
 
-Wible places cables, wires and ropes as curves: click points on surfaces or in the air and the curve hangs between them like the real thing. Each curve stays live until you save it, so you can drag its points, tweak tension or thickness, and watch it swing and settle against nearby objects without pressing Play. When it looks right, save it as a curve or as a mesh with clean UVs, trim sheets included.
+Wible places wires and cables as curves: click points on surfaces or in the air and the curve hangs between them like the real thing. Each curve stays live until you save it, so you can drag its points, tweak tension or thickness, and watch it swing and settle against nearby objects without pressing Play. When it looks right, save it as a curve or as a mesh with clean UVs, trim sheets included.
 
 ## Features
 
