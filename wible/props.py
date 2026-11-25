@@ -62,14 +62,23 @@ def _make_update(name, after=None, shape=True):
         if _syncing:
             return
         obj = self.id_data
-        if not isinstance(obj, bpy.types.Object) or not self.is_wire:
+        if isinstance(obj, bpy.types.Scene):
+            # The settings for new curves, edited while drawing: the curves
+            # drawn in this session follow them live.
+            from . import draw
+            targets = draw.session_curves() if self == obj.wible.defaults else []
+            obj = targets[0] if targets else None
+        elif isinstance(obj, bpy.types.Object) and self.is_wire:
+            targets = [obj] + [o for o in _selected_wires(context) if o != obj]
+        else:
+            return
+        if obj is None:
             return
         _syncing = True
         try:
             value = getattr(self, name)
-            targets = [obj] + [o for o in _selected_wires(context) if o != obj]
             for wire in targets:
-                if wire != obj:
+                if getattr(wire.wible, name) != value:
                     setattr(wire.wible, name, value)
                 if after is not None:
                     after(wire)

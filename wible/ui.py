@@ -229,7 +229,9 @@ def draw_wible(layout, context, header=True):
 
     if drawing:
         layout.separator()
-        layout.label(text="New Curve Settings")
+        # Curves drawn in this session follow these settings live.
+        made = len(draw.session_curves())
+        layout.label(text=f"Curve Settings (new and {made} drawn)" if made else "New Curve Settings")
         _draw_wire_sections(layout, scene_settings.defaults, is_wire=False,
                             mesh_settings=scene_settings.mesh)
         return

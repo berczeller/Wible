@@ -55,6 +55,18 @@ def session_active(context):
     return _tool is not None and not _tool.done
 
 
+def session_curves():
+    """Live curves made in the current Draw session, newest first."""
+    if _tool is None or _tool.done:
+        return []
+    out = []
+    for name in reversed(_tool.created):
+        obj = bpy.data.objects.get(name)
+        if obj is not None and obj.type == "CURVE" and obj.wible.is_wire and not obj.wible.accepted:
+            out.append(obj)
+    return out
+
+
 class _Point:
     __slots__ = ("position", "normal", "kind", "strength", "surface")
 
