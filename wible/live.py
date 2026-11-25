@@ -459,18 +459,33 @@ def on_undo(_scene, _dummy=None):
     moving = [name for name, state in _states.items() if state.phase != "ASLEEP"]
     build.clear_collider_cache()
     clear()
-    if moving:
-        _after_undo.update(moving)
-        if not bpy.app.timers.is_registered(_settle_after_undo):
-            bpy.app.timers.register(_settle_after_undo, first_interval=0.0)
+    # Always run it: it also refreshes the world matrices undo leaves stale,
+    # before any other timer reads point positions.
+    _after_undo.update(moving)
+    if not bpy.app.timers.is_registered(_settle_after_undo):
+        bpy.app.timers.register(_settle_after_undo, first_interval=0.0)
 
 
 _after_undo = set()
 
 
+def _update_view_layers():
+    wm = bpy.context.window_manager
+    seen = set()
+    for window in wm.windows if wm else ():
+        layer = window.view_layer
+        if layer is not None and layer.as_pointer() not in seen:
+            seen.add(layer.as_pointer())
+            layer.update()
+
+
 def _settle_after_undo():
     names = list(_after_undo)
     _after_undo.clear()
+    # Undo doesn't store world matrices (Blender rebuilds them on the next
+    # evaluation). Evaluate first, or the curve is solved as if it sat at
+    # the world origin and ends up drawn away from its handles.
+    _update_view_layers()
     for name in names:
         obj = bpy.data.objects.get(name)
         if obj is None or obj.type != "CURVE" or not obj.wible.is_wire or obj.wible.accepted:
