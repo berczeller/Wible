@@ -2,6 +2,14 @@
 
 All notable changes to this project are documented here. The format follows Keep a Changelog and the project uses Semantic Versioning.
 
+## [0.1.1] - 2026-11-25
+
+### Changed
+- While drawing, the curve settings also edit the curves drawn in that session, live
+
+### Fixed
+- After Ctrl+Z a curve could be drawn away from its handles, leaving only the handles and guide lines visible
+
 ## [0.1.0] - 2026-11-21
 
 ### Added

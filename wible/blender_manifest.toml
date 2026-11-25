@@ -1,7 +1,7 @@
 schema_version = "1.0.0"
 
 id = "wible"
-version = "0.1.0"
+version = "0.1.1"
 name = "Wible"
 tagline = "Place hanging curves in the viewport, with live gravity"
 maintainer = "Tom Berczeller"

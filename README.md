@@ -2,7 +2,7 @@
 
 ### Click hanging curves into the Blender viewport, with live gravity and collisions.
 
-![Blender](https://img.shields.io/badge/Blender-5.2%2B-7fd3ff?style=flat-square) ![Type](https://img.shields.io/badge/Blender-extension-ff8fa3?style=flat-square) ![Python](https://img.shields.io/badge/Python-3.13-c4a7ff?style=flat-square) ![Version](https://img.shields.io/badge/version-0.1.0-ffc36b?style=flat-square) ![License](https://img.shields.io/badge/license-GPL--3.0--or--later-6fd6a0?style=flat-square)
+![Blender](https://img.shields.io/badge/Blender-5.2%2B-7fd3ff?style=flat-square) ![Type](https://img.shields.io/badge/Blender-extension-ff8fa3?style=flat-square) ![Python](https://img.shields.io/badge/Python-3.13-c4a7ff?style=flat-square) ![Version](https://img.shields.io/badge/version-0.1.1-ffc36b?style=flat-square) ![License](https://img.shields.io/badge/license-GPL--3.0--or--later-6fd6a0?style=flat-square)
 
 ---
 
@@ -28,12 +28,12 @@ Wible places wires and cables as curves: click points on surfaces or in the air 
 
 ## Install
 
-1. Download `Wible-0.1.0.zip` from [Releases](../../releases).
+1. Download `Wible-0.1.1.zip` from [Releases](../../releases).
 2. In Blender, open **Edit > Preferences > Get Extensions**, click the menu at the top right and pick **Install from Disk**.
 3. Select the zip. Wible shows up in the 3D Viewport sidebar (`N`) under the **Wible** tab.
 
 > [!NOTE]
-> GitHub's automatic **Source code** archives are not installable extensions. Use the `Wible-0.1.0.zip` asset.
+> GitHub's automatic **Source code** archives are not installable extensions. Use the `Wible-0.1.1.zip` asset.
 
 ## Usage
 
